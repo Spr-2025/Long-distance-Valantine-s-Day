@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Week</title>
+    <link rel="stylesheet" href="new.css">
+    <style>
+        body {
+            background-image: url(https://as1.ftcdn.net/v2/jpg/01/13/31/64/1000_F_113316480_38pFv156QZ63Muku421twISdjlBFZKPT.jpg);
+            background-size: cover;
+            color: white;
+        }
+
+        /* Scroll animation for Valentine's Week heading */
+        .valentine-week h1 {
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            color: #EE161E;
+            animation: scrollFromLeft 10s linear infinite, colorChange 10s linear infinite;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        @keyframes scrollFromLeft {
+            0% {
+                transform: translateX(-200%);
+            }
+            100% {
+                transform: translateX(200%);
+            }
+        }
+
+        @keyframes colorChange {
+    0% {
+        color: #FF5733; /* Bright Red */
+    }
+    25% {
+        color: #FFBD33; /* Bright Yellow */
+    }
+    50% {
+        color: #FF33B5; /* Bright Pink */
+    }
+    75% {
+        color: #33B5FF; /* Bright Cyan */
+    }
+    100% {
+        color: #FF5733; /* Bright Red */
+    }
+}
+
+
+        .valentine-week {
+            text-align: center;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .day {
+            margin: 10px;
+            border: 2px solid #EE161E;
+            border-radius: 10px;
+            padding: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .day img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="background-color: #EE161E; text-align: center;">OYE 🐒</h1>
+    <!-- <h2 style="color: #000; text-align: center;">This February, "LOVE IS IN THE AIR"</h2> -->
+    <div class="valentine-week">
+        <h1>Valentine's Week💞💓💗💑</h1>
+        <h2 style="color: #000; text-align: center;">This February, "LOVE IS IN THE AIR"</h2>
+        <h3 style="font-size: larger; padding-top: 5px;color: hwb(14 5% 13% / 0.873);">DO YOU MISS ME ?</h3>
+        <button id="yesButton" style="background-color: #EE161E;color: aliceblue;border-radius: 20%;height:max-content;width: 85px;height: 50px;">yes</button>
+        <button id="noButton" style="background-color: black;color: aliceblue;border-radius: 20%;height:max-content;width: 85px;height: 50px;">no</button>
+        <div class="message" id="message"></div>
+    </div>
+    <script>
+        document.getElementById('yesButton').onclick = function() {
+            document.getElementById('message').innerText = "Aww, every moment without you feels incomplete!🥰💕 I miss you beyond words! 🥺💖💫 You’re always in my heart! 💕😘";
+            let message = document.getElementById('message');
+            message.style.color = "#050404";
+            message.style.fontSize = "24px";
+            message.style.fontWeight = "bold";
+            message.style.fontStyle = "italic";
+        };
+
+        document.getElementById('noButton').onclick = function() {
+            document.getElementById('message').innerText = "Ouch! That hurts a little 😢💔... But it's okay, I'll just keep missing you until you do! 😌💕";
+            let message = document.getElementById('message');
+            message.style.color = "#050404";
+            message.style.fontSize = "24px";
+            message.style.fontWeight = "bold";
+            message.style.fontStyle = "italic";
+            alert("JAGRATAGA CHUSI SELECT CHEYU LEDA, DEBBALU PADUTHAI NIKU 👊");
+        };
+    </script>
+
+    <script>
+       const days = [
+    { date: 7, name: "Rose Day", img: "https://m.media-amazon.com/images/I/81HzRgFZcPL.jpg", message: "Wishing you a beautiful Rose Day! Missing the way your smile blooms like a rose." },
+    { date: 8, name: "Propose Day", img: "https://www.shutterstock.com/image-vector/will-you-marry-me-invitation-260nw-1014962146.jpg", message: "Happy Propose Day! If only I could be there to hold your hands and say it once more." },
+    { date: 9, name: "Chocolate Day", img: "https://static.vecteezy.com/system/resources/thumbnails/054/927/707/small/valentine-s-day-is-coming-up-and-you-can-t-go-wrong-with-chocolate-photo.jpeg", message: "Sweet chocolates for my sweetest person! Wish I could share every bite with you." },
+    { date: 10, name: "Teddy Day", img: "https://thumbs.dreamstime.com/b/toy-bear-illustration-heart-valentine-s-day-background-toy-bear-illustration-heart-valentine-s-day-background-high-303201567.jpg", message: "Happy Teddy Day! I wish I could be your teddy, always close to you.." },
+    { date: 11, name: "Promise Day", img: "https://static.toiimg.com/thumb/msid-89485680,width-400,resizemode-4/89485680.jpg", message: "On this Promise Day, I promise to always love and miss you, no matter the distance." },
+    { date: 12, name: "Hug Day", img: "https://thumbs.dreamstime.com/z/happy-couple-hug-love-each-other-concept-hugging-day-valentines-day-free-copy-space-happy-couple-hug-love-each-296192789.jpg", message: "Sending you a tight hug from miles away! Missing the warmth of being in your arms." },
+    { date: 13, name: "Kiss Day", img: "https://i.pinimg.com/474x/b9/58/25/b958254f25dad7e8f28184bdfcd4e4fc.jpg", message: "The thing I crave the most is your kiss. Wishing you a Happy Kiss Day with all my love!" },
+    { date: 14, name: "Valentine's Day", img: "https://static.vecteezy.com/system/resources/previews/028/718/584/large_2x/two-neon-hearts-lights-illustration-ai-generated-photo.jpg", message: "Happy Valentine's Day, my love! No matter how far, my heart is always with you." }
+];
+        const today = new Date().getDate();
+        days.forEach(day => {
+            let div = document.createElement("div");
+            div.className = "day";
+            div.innerHTML = `<h3>${day.name} (${day.date}th Feb)</h3><img src="${day.img}" alt="${day.name}">`;
+            div.onclick = () => window.open(`data.html?day=${day.name}`, "_blank");
+            document.querySelector(".valentine-week").appendChild(div);
+        });
+    </script>
+</body>
+</html>

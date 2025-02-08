@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Week Event</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: red;
+        }
+        .week-text {
+            font-size: 28px;
+            font-weight: bold;
+            color: red;
+            margin-bottom: 20px;
+        }
+        .day-message {
+            font-size: 24px;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            display: inline-block;
+            border-radius: 10px;
+        }
+        img {
+            max-width: 300px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>💖 Valentine's Week 💖</h1>
+    
+    <div class="week-text">Celebrating Love Every Day! ❤️</div>
+
+    <div class="day-message" id="message"></div>
+    <img id="eventImage" src="" alt="Event Image">
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const dayName = urlParams.get('day');
+
+        const events = {
+            "Rose Day": {
+                message: "🌹 Feb 07 (ROSE DAY) - Wishing you a beautiful Rose Day! Missing the way your smile blooms like a rose. 🌹",
+                image: "https://m.media-amazon.com/images/I/81HzRgFZcPL.jpg",
+                background: "https://m.media-amazon.com/images/I/81HzRgFZcPL.jpg"
+            },
+            "Propose Day": {
+                message: "💍 Feb 08 (PROPOSE DAY) - Happy Propose Day! If only I could be there to hold your hands and say it once more. 💕",
+                image: "https://www.shutterstock.com/image-vector/will-you-marry-me-invitation-260nw-1014962146.jpg",
+                background: "https://www.shutterstock.com/image-vector/will-you-marry-me-invitation-260nw-1014962146.jpg"
+            },
+            "Chocolate Day": {
+                message: "🍫 Feb 09 (CHOCOLATE DAY) - Sweet chocolates for my sweetest person! Wish I could share every bite with you. 🍫💖",
+                image: "https://static.vecteezy.com/system/resources/thumbnails/054/927/707/small/valentine-s-day-is-coming-up-and-you-can-t-go-wrong-with-chocolate-photo.jpeg",
+                background: "https://static.vecteezy.com/system/resources/thumbnails/054/927/707/small/valentine-s-day-is-coming-up-and-you-can-t-go-wrong-with-chocolate-photo.jpeg"
+            },
+            "Teddy Day": {
+                message: "🧸 Feb 10 (TEDDY DAY) - Happy Teddy Day! I wish I could be your teddy, always close to you. 🤗",
+                image: "https://thumbs.dreamstime.com/b/toy-bear-illustration-heart-valentine-s-day-background-toy-bear-illustration-heart-valentine-s-day-background-high-303201567.jpg",
+                background: "https://thumbs.dreamstime.com/b/toy-bear-illustration-heart-valentine-s-day-background-toy-bear-illustration-heart-valentine-s-day-background-high-303201567.jpg"
+            },
+            "Promise Day": {
+                message: "🤞 Feb 11 (PROMISE DAY) - On this Promise Day, I promise to always love and miss you, no matter the distance. 💖",
+                image: "https://static.toiimg.com/thumb/msid-89485680,width-400,resizemode-4/89485680.jpg",
+                background: " https://wallpapercave.com/wp/wp2384199.jpg"
+            },
+            "Hug Day": {
+                message: "🤗 Feb 12 (HUG DAY) - Sending you a tight hug from miles away! Missing the warmth of being in your arms. 💕",
+                image: "https://thumbs.dreamstime.com/z/happy-couple-hug-love-each-other-concept-hugging-day-valentines-day-free-copy-space-happy-couple-hug-love-each-296192789.jpg",
+                background: "https://thumbs.dreamstime.com/z/happy-couple-hug-love-each-other-concept-hugging-day-valentines-day-free-copy-space-happy-couple-hug-love-each-296192789.jpg"
+            },
+            "Kiss Day": {
+                message: "💋 Feb 13 (KISS DAY) - The thing I crave the most is your kiss. Wishing you a Happy Kiss Day with all my love! 😘",
+                image: "https://i.pinimg.com/474x/b9/58/25/b958254f25dad7e8f28184bdfcd4e4fc.jpg",
+                background: "https://i.pinimg.com/474x/b9/58/25/b958254f25dad7e8f28184bdfcd4e4fc.jpg"
+            },
+            "Valentine's Day": {
+                message: "💘 Feb 14 (VALENTINE'S DAY) - Happy Valentine's Day, my love! No matter how far, my heart is always with you. ❤️",
+                image: "https://static.vecteezy.com/system/resources/previews/028/718/584/large_2x/two-neon-hearts-lights-illustration-ai-generated-photo.jpg",
+                background: "https://static.vecteezy.com/system/resources/previews/028/718/584/large_2x/two-neon-hearts-lights-illustration-ai-generated-photo.jpg",
+            }
+        };
+
+        if (events[dayName]) {
+            document.getElementById('message').innerText = events[dayName].message;
+            document.getElementById('eventImage').src = events[dayName].image;
+
+            // Delay background image change by 3 seconds
+            setTimeout(() => {
+                document.body.style.backgroundImage = `url('${events[dayName].background}')`;
+            }, 3000);
+        } else {
+            document.getElementById('message').innerText = "Event not found.";
+        }
+    </script>
+</body>
+</html>
